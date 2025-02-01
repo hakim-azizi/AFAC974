@@ -1,0 +1,40 @@
+.photographer {
+  margin-bottom: 1rem;
+}
+
+.photographer > h2 {
+  margin: 1rem;
+  text-align: center;
+}
+
+.photographer > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.photographer > div > figure {
+  min-width: 260px;
+  width: 35%;
+}
+
+.photographer > div > figure > img {
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+  border-radius: 50%;
+}
+
+.photographer > div > article {
+  background: var(--light-color);
+  border-radius: 20px;
+  width: 59%;
+  padding: 20px;
+  min-width: 260px;
+  margin-right: 2%;
+}
+
+footer {
+  clear: both;
+}
