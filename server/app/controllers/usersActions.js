@@ -82,18 +82,18 @@ const edit = async (req, res, next) => {
 const add = async (req, res, next) => {
   // Extract the user data from the request body
   const user = req.body;
-  const regex = /^[a-z][a-z1-9\-_.]{4,50}@[a-z1-9\-_]{5,50}\.[a-z]{2,4}$/;
+  // const regex = /^[a-z][a-z1-9\-_.]{4,50}@[a-z1-9\-_]{5,50}\.[a-z]{2,4}$/;
 
   try {
-    if (!regex.test(user.email)) {
-      res.status(400).json("vous avez entré des carractères invalides");
-    } else {
+    // if (!regex.test(user.email)) {
+     // res.status(400).json("vous avez entré des carractères invalides");
+    // } else {
       // Insert the user into the database
       const insertId = await tables.user.create(user);
 
       // Respond with HTTP 201 (Created) and the ID of the newly inserted user
       res.status(201).json({ insertId });
-    }
+    // }
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
