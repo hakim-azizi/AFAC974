@@ -73,3 +73,14 @@ header > nav > ul > li > a:hover {
   border: 1px solid var(--dark-color);
   border-radius: 50%;
 }
+
+.cookies {
+  position: fixed;
+  top: calc(50vh - 125px);
+  left: calc(50vw - 125px);
+  width: 250px;
+  height: 250px;
+  background: var(--light-color);
+  text-align: center;
+  align-content: center;
+}
