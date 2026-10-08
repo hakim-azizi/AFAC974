@@ -26,6 +26,8 @@ const migrate = async () => {
       password: DB_PASSWORD,
       ssl: {
         ca: DB_CA,
+        minVersion: "TLSv1.2",
+        rejectUnauthorized: true,
       },
       multipleStatements: true,
     });
