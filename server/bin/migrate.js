@@ -8,7 +8,7 @@ const path = require("node:path");
 const schema = path.join(__dirname, "..", "database", "schema.sql");
 
 // Get database connection details from .env file
-const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
+const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, DB_CA } = process.env;
 
 // Update the database schema
 const mysql = require("mysql2/promise");
@@ -24,7 +24,10 @@ const migrate = async () => {
       port: DB_PORT,
       user: DB_USER,
       password: DB_PASSWORD,
-      multipleStatements: true, // Allow multiple SQL statements
+      ssl: {
+        ca: DB_CA,
+      },
+      multipleStatements: true,
     });
 
     // Drop the existing database if it exists
