@@ -1,4 +1,4 @@
-CREATE TABLE artist (
+CREATE TABLE IF NOT EXISTS  artist (
     id INT NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
@@ -76,7 +76,7 @@ VALUES (
         "images/photos/photographer10/photographer.jpg"
     );
 
-CREATE TABLE artwork (
+CREATE TABLE IF NOT EXISTS artwork (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(100) NOT NULL,
     description VARCHAR(1080) NOT NULL,
@@ -695,13 +695,13 @@ VALUES (
         10
     );
 
-CREATE TABLE gallery (
+CREATE TABLE IF NOT EXISTS gallery (
     id_user INT REFERENCES user (id),
     id_artwork INT REFERENCES artwork (id),
     PRIMARY KEY (id_user, id_artwork)
 );
 
-CREATE TABLE user (
+CREATE TABLE IF NOT EXISTS user (
     id INT NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
