@@ -70,7 +70,7 @@ const router = createBrowserRouter([
           const url = new URL(request.url);
           const id = url.searchParams.get("id");
           return fetch(
-            `${import.meta.env.VITE_API_URL}/api/artworks/${id}`
+            `/api/artworks/${id}`
           ).then((response) => response.json());
         },
       },
@@ -89,7 +89,7 @@ const router = createBrowserRouter([
           const url = new URL(request.url);
           const id = url.searchParams.get("id");
           return fetch(
-            `${import.meta.env.VITE_API_URL}/api/artists/${id}`
+            `/api/artists/${id}`
           ).then((response) => response.json());
         },
       },

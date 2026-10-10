@@ -116,8 +116,13 @@ function Header() {
       </header>
       <div className="cookies" ref={divRef}>
         <p>
-          Ce site n'utilise que des cookies nécessaire au bon fonctionnement du
-          site.
+          Ce site n'utilise pas de cookies à des fins de suivi ou de publicité.
+          <br />
+          Il stocke uniquement des informations nécessaires à son bon
+          fonctionnement dans le Local Storage de votre navigateur.
+          <br />
+          Vous pouvez supprimer ces données à tout moment en vidant le stockage
+          local dans les paramètres de votre navigateur.
         </p>
         <button type="button" onClick={cookiesStatement}>
           OK

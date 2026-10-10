@@ -30,7 +30,7 @@ function FormUpdateArtist({ value }) {
     try {
       // Première requête pour ajouter le fichier
       const addFileFetch = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/upload/artwork`,
+        `/api/upload/artwork`,
         {
           method: "POST",
           body: data,
@@ -43,7 +43,7 @@ function FormUpdateArtist({ value }) {
       // Seconde requête pour mettre à jour les informations de l'œuvre
 
       const fetchResponse = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/artists/update/${value.id}`,
+        `/api/artists/update/${value.id}`,
         {
           method: "PUT",
           headers: {
