@@ -9,6 +9,7 @@ const client = mysql.createPool({
   port: DB_PORT,
   user: DB_USER,
   password: DB_PASSWORD,
+  database: DB_NAME,
   ssl: {
     ca: DB_CA,
     minVersion: "TLSv1.2",
