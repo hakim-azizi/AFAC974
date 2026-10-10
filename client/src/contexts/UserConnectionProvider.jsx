@@ -26,7 +26,7 @@ export function UserConnectionProvider({ children }) {
 
     try {
       const response = await fetch(
-        `/api/users/login`,
+        `${import.meta.env.VITE_API_URL}api/users/login`,
         {
           method: "post",
           headers: { "Content-Type": "application/json" },
@@ -75,7 +75,7 @@ export function UserConnectionProvider({ children }) {
 
   const token = localStorage.getItem("token");
   if (token !== null) {
-    fetch(`/api/users/auth`, {
+    fetch(`${import.meta.env.VITE_API_URL}api/users/auth`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

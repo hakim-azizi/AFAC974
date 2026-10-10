@@ -24,7 +24,7 @@ function AddArtist() {
     // * Ma première requête fetch va tenter d'ajouter le fichier dans le serveur.
     try {
       const addFileFetch = await fetch(
-        `/api/upload/artist`,
+        `${import.meta.env.VITE_API_URL}api/upload/artist`,
         {
           method: "POST",
           body: data,
@@ -40,7 +40,7 @@ function AddArtist() {
       if (fileResponse) {
         const { filename } = fileResponse;
         const fetchResponse = await fetch(
-          `/api/artists`,
+          `${import.meta.env.VITE_API_URL}api/artists`,
           {
             method: "POST",
             headers: {
