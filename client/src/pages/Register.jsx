@@ -72,7 +72,7 @@ function Register() {
     try {
       // Appel à l'API pour créer un nouvel utilisateur
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/users`,
+        `/api/users`,
         {
           method: "post",
           headers: { "Content-Type": "application/json" },

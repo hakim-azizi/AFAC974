@@ -26,7 +26,7 @@ export function UserConnectionProvider({ children }) {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/users/login`,
+        `/api/users/login`,
         {
           method: "post",
           headers: { "Content-Type": "application/json" },

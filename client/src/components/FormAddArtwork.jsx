@@ -24,7 +24,7 @@ function FormAddArtwork({ value }) {
     // * Ma première requête fetch va tenter d'ajouter le fichier dans le serveur.
     try {
       const addFileFetch = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/upload/artwork`,
+        `/api/upload/artwork`,
         {
           method: "POST",
           body: data,
@@ -38,7 +38,7 @@ function FormAddArtwork({ value }) {
       if (fileResponse) {
         const { filename } = fileResponse;
         const fetchResponse = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/artworks`,
+          `/api/artworks`,
           {
             method: "POST",
             headers: {
