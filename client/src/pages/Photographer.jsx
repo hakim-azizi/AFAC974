@@ -9,7 +9,7 @@ function Photographer() {
   const [photo, setPhoto] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/artworks/`)
+    fetch(`/api/artworks/`)
       .then((response) => response.json())
       .then((data) => setPhoto(data));
   }, []);

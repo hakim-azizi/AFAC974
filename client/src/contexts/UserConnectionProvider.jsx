@@ -75,7 +75,7 @@ export function UserConnectionProvider({ children }) {
 
   const token = localStorage.getItem("token");
   if (token !== null) {
-    fetch(`${import.meta.env.VITE_API_URL}/api/users/auth`, {
+    fetch(`/api/users/auth`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

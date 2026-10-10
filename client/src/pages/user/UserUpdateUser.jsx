@@ -7,7 +7,7 @@ function UserUpdateUser() {
   const { idUser } = useContext(UserConnectionContext);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/users/${idUser}`)
+    fetch(`/api/users/${idUser}`)
       .then((response) => response.json())
       .then((data) => setUser(data));
   }, [idUser]);
