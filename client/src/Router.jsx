@@ -24,10 +24,10 @@ import UserUpdateUser from "./pages/user/UserUpdateUser";
 
 export const userLoader = async () => {
   const [artwork, artist] = await Promise.all([
-    fetch(`${import.meta.env.VITE_API_URL}/api/artworks/home/`).then((res) =>
+    fetch(`/api/artworks/home/`).then((res) =>
       res.json()
     ),
-    fetch(`${import.meta.env.VITE_API_URL}/api/artists/home/`).then((res) =>
+    fetch(`/api/artists/home/`).then((res) =>
       res.json()
     ),
   ]);
@@ -37,10 +37,10 @@ export const userLoader = async () => {
 
 export const artistArtworkLoader = async () => {
   const [artwork, artist] = await Promise.all([
-    fetch(`${import.meta.env.VITE_API_URL}/api/artworks/rand`).then((res) =>
+    fetch(`/api/artworks/rand`).then((res) =>
       res.json()
     ),
-    fetch(`${import.meta.env.VITE_API_URL}/api/artists/`).then((res) =>
+    fetch(`/api/artists/`).then((res) =>
       res.json()
     ),
   ]);
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         path: "artist",
         element: <Artist />,
         loader: () =>
-          fetch(`${import.meta.env.VITE_API_URL}/api/artists/`).then(
+          fetch(`/api/artists/`).then(
             (response) => response.json()
           ),
       },
@@ -121,7 +121,7 @@ const router = createBrowserRouter([
             path: "update-artist",
             element: <UpdateArtist />,
             loader: () =>
-              fetch(`${import.meta.env.VITE_API_URL}/api/artists/`).then(
+              fetch(`/api/artists/`).then(
                 (response) => response.json()
               ),
           },
@@ -129,7 +129,7 @@ const router = createBrowserRouter([
             path: "add-artwork",
             element: <AddArtwork />,
             loader: () =>
-              fetch(`${import.meta.env.VITE_API_URL}/api/artists/`).then(
+              fetch(`/api/artists/`).then(
                 (response) => response.json()
               ),
           },
@@ -137,7 +137,7 @@ const router = createBrowserRouter([
             path: "update-artwork",
             element: <UpdateArtwork />,
             loader: () =>
-              fetch(`${import.meta.env.VITE_API_URL}/api/artworks/`).then(
+              fetch(`/api/artworks/`).then(
                 (response) => response.json()
               ),
           },
@@ -149,7 +149,7 @@ const router = createBrowserRouter([
             path: "update-user",
             element: <UpdateUser />,
             loader: () =>
-              fetch(`${import.meta.env.VITE_API_URL}/api/users/`).then(
+              fetch(`/api/users/`).then(
                 (response) => response.json()
               ),
           },
