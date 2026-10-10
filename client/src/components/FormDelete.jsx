@@ -7,7 +7,7 @@ function FormDelete({ item, id, setMessageRequest }) {
     event.preventDefault();
 
     const deleteFileFetch = await fetch(
-      `/api/${item}s/delete/${id}`,
+      `${import.meta.env.VITE_API_URL}api/${item}s/delete/${id}`,
       {
         method: "DELETE",
       }

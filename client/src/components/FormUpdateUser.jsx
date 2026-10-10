@@ -39,7 +39,7 @@ function FormUpdateUser({ value, admin }) {
       // Appel à l'API pour créer un nouvel utilisateur
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `/api/users/update/${value.id}`,
+        `${import.meta.env.VITE_API_URL}api/users/update/${value.id}`,
 
         {
           method: "put",
