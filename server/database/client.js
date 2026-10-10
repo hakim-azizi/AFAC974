@@ -1,5 +1,5 @@
 // Get variables from .env file for database connection
-const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
+const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, DB_CA } = process.env;
 
 // Create a connection pool to the database
 const mysql = require("mysql2/promise");
@@ -9,7 +9,12 @@ const client = mysql.createPool({
   port: DB_PORT,
   user: DB_USER,
   password: DB_PASSWORD,
-  database: DB_NAME,
+  ssl: {
+    ca: DB_CA,
+    minVersion: "TLSv1.2",
+    rejectUnauthorized: true,
+  },
+  multipleStatements: true,
 });
 
 client.checkConnection = () => {
