@@ -17,6 +17,9 @@ const client = mysql.createPool({
   multipleStatements: true,
 });
 
+// Switch to the newly created database
+await client.query(`use ${DB_NAME}`);
+
 client.checkConnection = () => {
   // Try to get a connection to the database
   client
